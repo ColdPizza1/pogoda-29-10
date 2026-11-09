@@ -1,20 +1,24 @@
 # Ze ścieżki services/openweather importuj element get_weather
 from services.openweather import get_weather
 from services.files import save_to_excel, read_excel
-import time
+from common.dashboard import render
 
-while True:
+#import time
+
+render()
+
+#while True:
     # Pod zmienną weather kryją się pobrane - aktualne dane pogodowe
-    weather = get_weather()
-    save_to_excel([weather])
+    #weather = get_weather()
+    #save_to_excel([weather])
 
     # Odczytaj dane zapisane w Excelu
-    df = read_excel()
-    print(df)
+    #df = read_excel()
+    #print(df)
 
     # Po każdej iteracji śpij na X czasu
     # zapobiegnie to nieskończonej pętli - tysiące razy na sekundę
-    time.sleep(15)
+    #time.sleep(15)
 
 # Serwis 1: Pobieranie danych pogodowych
 

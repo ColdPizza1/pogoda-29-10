@@ -23,7 +23,7 @@ common/*
 services/*
 !services/files.py
 !services/openweather.py
-!services/dashboard.py
+!common/dashboard.py
 
 # Pliki systemowe
 .DS_Store
