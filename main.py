@@ -1,25 +1,20 @@
 # Ze ścieżki services/openweather importuj element get_weather
 from services.openweather import get_weather
-from services.files import save_to_excel, read_excel
-from common.dashboard import render
+from services.files import save_to_excel
+from services.dashboard import render
+from services.mysql_db import create_weather_table, insert_weather
+import time
 
-#import time
+# render()
+create_weather_table()
 
-render()
-
-#while True:
+while True:
     # Pod zmienną weather kryją się pobrane - aktualne dane pogodowe
-    #weather = get_weather()
-    #save_to_excel([weather])
+    weather = get_weather()
+    save_to_excel([weather])
 
-    # Odczytaj dane zapisane w Excelu
-    #df = read_excel()
-    #print(df)
+    insert_weather(weather)
 
     # Po każdej iteracji śpij na X czasu
     # zapobiegnie to nieskończonej pętli - tysiące razy na sekundę
-    #time.sleep(15)
-
-# Serwis 1: Pobieranie danych pogodowych
-
-# Serwis 2: Zapis wcześniej pobranych danych do excelaS
+    time.sleep(15)

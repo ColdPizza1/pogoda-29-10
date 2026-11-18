@@ -10,6 +10,8 @@ def get_weather():
     url = f"https://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}"
     response = requests.get(url)
     data = response.json()
+    print("Status API:", response.status_code)
+    print("Odpowiedź API:", data)
 
     weather = {
         "place": data.get("name"),
