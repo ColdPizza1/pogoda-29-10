@@ -1,3 +1,4 @@
+
 # PyCharm i środowisko
 .idea/
 .venv/
@@ -5,25 +6,28 @@ venv/
 __pycache__/
 *.pyc
 
-# Klucze API
+# Klucze API i hasła
 .env
 .env.*
-common/config.py
+**/.env
+**/.env.*
 
 # Pliki Excel i CSV
 *.xlsx
-*.xlxs
+*.xls
 *.csv
 
-# Ignoruj pozostałe skrypty
+# Zachowaj tylko potrzebne pliki w common
 common/*
+!common/config.py
 !common/functions.py
 
-# Zachowaj tylko pliki pogodowe w services
+# Zachowaj tylko potrzebne pliki w services
 services/*
 !services/files.py
 !services/openweather.py
 !services/dashboard.py
+!services/mysql_db.py
 
 # Pliki systemowe
 .DS_Store
